@@ -2,7 +2,7 @@ package com.driver;
 
 public class Book {
     
-     private int id;
+     private int id=0;
 
      private String name;
 
@@ -13,8 +13,7 @@ public class Book {
      public Book() {
      }
 
-     public Book(int id, String name, String genre, String author) {
-          this.id = id;
+     public Book(String name, String genre, String author) {
           this.name = name;
           this.genre = genre;
           this.author = author;

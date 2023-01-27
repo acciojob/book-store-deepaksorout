@@ -10,6 +10,7 @@ public class BookRepository {
 
     Map<Integer,Book>map=new HashMap<>();
     public Book save(Book book){
+        book.setId(book.getId()+1);
         map.put(book.getId(),book);
         return null;
     }
