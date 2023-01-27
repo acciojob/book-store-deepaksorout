@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class BookRepository {
+    public BookRepository() {
+    }
 
     Map<Integer,Book>map=new HashMap<>();
     public Book save(Book book){
