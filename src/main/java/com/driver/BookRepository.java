@@ -10,8 +10,8 @@ public class BookRepository {
 
     Map<Integer,Book>map=new HashMap<>();
     public Book save(Book book){
-        book.setId(book.getId()+1);
-        map.put(book.getId(),book);
+        book.setId(book.getId() + 1);
+        map.put(book.getId(), book);
         return null;
     }
 
@@ -25,7 +25,9 @@ public class BookRepository {
     public List<Book> findAll(){
         List<Book> list=new ArrayList<>();
         for(Book book:map.values()){
-            list.add(book);
+            if(!list.contains(book)) {
+                list.add(book);
+            }
         }
         return list;
     }
@@ -46,7 +48,9 @@ public class BookRepository {
         List<Book> list=new ArrayList<>();
         for(Book book:map.values()){
             if(book.getAuthor().equals(author)){
-                list.add(book);
+                if(!list.contains(book)){
+                    list.add(book);
+                }
             }
         }
         return list;
@@ -56,7 +60,9 @@ public class BookRepository {
         List<Book> list=new ArrayList<>();
         for(Book book:map.values()){
             if(book.getGenre().equals(genre)){
-                list.add(book);
+                if(!list.contains(book)) {
+                    list.add(book);
+                }
             }
         }
         return list;
